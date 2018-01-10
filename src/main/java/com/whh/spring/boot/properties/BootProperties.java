@@ -1,4 +1,4 @@
-package com.whh.spring.boot.springboot.properties;
+package com.whh.spring.boot.properties;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

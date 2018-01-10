@@ -1,6 +1,6 @@
-package com.whh.spring.boot.springboot.controller;
+package com.whh.spring.boot.controller;
 
-import com.whh.spring.boot.springboot.BaseTest;
+import com.whh.spring.boot.BaseTest;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.test.web.servlet.MockMvc;

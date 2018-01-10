@@ -1,6 +1,6 @@
-package com.whh.spring.boot.springboot.exception;
+package com.whh.spring.boot.exception;
 
-import com.whh.spring.boot.springboot.utils.AbsResponse;
+import com.whh.spring.boot.utils.AbsResponse;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;

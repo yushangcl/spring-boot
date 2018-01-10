@@ -1,6 +1,8 @@
-package com.whh.spring.boot.springboot.controller;
+package com.whh.spring.boot.controller;
 
-import com.whh.spring.boot.springboot.model.User;
+import com.whh.spring.boot.model.User;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
@@ -18,6 +20,7 @@ public class UserController {
      */
     static Map<Long, User> users = Collections.synchronizedMap(new HashMap<Long, User>());
 
+    @ApiOperation(value="获取用户列表", notes="")
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public List<User> getUserList() {
         // 处理"/users/"的GET请求，用来获取用户列表
@@ -31,6 +34,8 @@ public class UserController {
         return users;
     }
 
+    @ApiOperation(value="创建用户", notes="根据User对象创建用户")
+    @ApiImplicitParam(name = "user", value = "用户详细实体user", required = true, dataType = "User")
     @RequestMapping(value="/", method=RequestMethod.POST)
     public String postUser(@ModelAttribute User user) {
         // 处理"/users/"的POST请求，用来创建User

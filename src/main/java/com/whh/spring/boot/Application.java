@@ -1,4 +1,4 @@
-package com.whh.spring.boot.springboot;
+package com.whh.spring.boot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

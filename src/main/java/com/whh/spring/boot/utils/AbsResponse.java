@@ -1,4 +1,4 @@
-package com.whh.spring.boot.springboot.utils;
+package com.whh.spring.boot.utils;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

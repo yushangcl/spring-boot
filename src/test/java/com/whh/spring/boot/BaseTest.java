@@ -1,4 +1,4 @@
-package com.whh.spring.boot.springboot;
+package com.whh.spring.boot;
 
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;

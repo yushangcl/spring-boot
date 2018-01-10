@@ -1,4 +1,4 @@
-package com.whh.spring.boot.springboot.model;
+package com.whh.spring.boot.model;
 
 import java.io.Serializable;
 
