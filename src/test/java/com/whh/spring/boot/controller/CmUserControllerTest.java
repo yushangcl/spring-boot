@@ -16,7 +16,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @author huahui.wu.
  *         Created on 2018/1/10.
  */
-public class UserControllerTest extends BaseTest {
+public class CmUserControllerTest extends BaseTest {
     private MockMvc mvc;
 
     @Before

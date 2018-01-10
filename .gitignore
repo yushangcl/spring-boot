@@ -18,10 +18,14 @@ hs_err_pid*
 .idea/
 *.iml
 
+# Eclipse #
+.settings/
+.classpath
+.project
+
 # maven
+target/
 .mvn/
 mvnw
 mvnw.cmd
 
-# target
-target/
