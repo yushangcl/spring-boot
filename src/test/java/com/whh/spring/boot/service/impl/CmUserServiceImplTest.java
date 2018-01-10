@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
  * @author huahui.wu.
  *         Created on 2018/1/10.
  */
-public class CmCmUserServiceImplTest extends BaseTest{
+public class CmUserServiceImplTest extends BaseTest{
 
     @Resource
     private CmUserService cmUserService;

@@ -29,3 +29,6 @@ target/
 mvnw
 mvnw.cmd
 
+# logging
+logs/
+
