@@ -1,4 +1,4 @@
-package com.whh.spring.boot.exception;
+package com.whh.spring.boot.system.exception;
 
 import com.whh.spring.boot.utils.AbsResponse;
 import org.springframework.web.bind.annotation.ControllerAdvice;

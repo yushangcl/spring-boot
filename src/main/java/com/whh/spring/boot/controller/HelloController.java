@@ -1,6 +1,6 @@
 package com.whh.spring.boot.controller;
 
-import com.whh.spring.boot.exception.ServiceException;
+import com.whh.spring.boot.system.exception.ServiceException;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

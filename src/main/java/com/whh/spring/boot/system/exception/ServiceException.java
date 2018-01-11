@@ -1,4 +1,4 @@
-package com.whh.spring.boot.exception;
+package com.whh.spring.boot.system.exception;
 
 import java.text.MessageFormat;
 
