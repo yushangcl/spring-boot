@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!-- 提供方应用信息，用于计算依赖关系 -->
+    <dubbo:application name="whh-service"  />
+
+    <!-- 注册中心服务地址 -->
+    <dubbo:registry id="zookeeper" protocol="zookeeper" address="${dubbo.registry.address}" />
+
+    <!-- 用dubbo协议在30001 -->
+    <dubbo:protocol name="dubbo" port="30001" dispather="all" threadpool="cached" threads="5000"/>
+    <!--<dubbo:protocol name="hessian" port="9090" dispather="all" threadpool="cached" threads="5000"/>-->
+
+    <!-- 服务和协议的缺省值配置 -->
+    <dubbo:provider group="impl" timeout="${dubbo.provider.timeout}" retries="0"
+                    connections="${dubbo.provider.connections}"/>
+
+    <!-- 声明需要暴露的服务接口 -->
+    <dubbo:service interface="com.whh.spring.boot.service.CmUserService" ref="cmUserService"
+                   version="1.0.0.${dubbo.version.surfix}" group="impl"/>
+    <!-- 具体服务接口的实现 -->
+    <bean id="cmUserService" class="com.whh.spring.boot.service.impl.CmUserServiceImpl" />
+
+</beans>
