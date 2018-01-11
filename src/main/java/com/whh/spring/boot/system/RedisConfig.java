@@ -1,4 +1,4 @@
-package com.whh.spring.boot.utils;
+package com.whh.spring.boot.system;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
