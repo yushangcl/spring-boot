@@ -12,6 +12,7 @@ import java.util.Objects;
 import java.util.Optional;
 
 /**
+ * Hessian请求工具
  * @author jingchun.zhang
  * @version 1.0.0
  * @date 2017/9/23
