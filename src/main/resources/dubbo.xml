@@ -19,6 +19,9 @@
     <dubbo:provider group="impl" timeout="${dubbo.provider.timeout}" retries="0"
                     connections="${dubbo.provider.connections}"/>
 
+    <!-- 通过注解发布服务 -->
+    <dubbo:annotation package="com.whh.spring.boot.service"/>
+
     <!-- 声明需要暴露的服务接口 -->
     <dubbo:service interface="com.whh.spring.boot.service.CmUserService" ref="cmUserService"
                    version="1.0.0.${dubbo.version.surfix}" group="impl"/>
