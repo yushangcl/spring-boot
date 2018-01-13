@@ -176,11 +176,11 @@
         </dependency>
 
         <!-- spring devtools热部署 idea 配合 ctrl + f9使用-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-devtools</artifactId>-->
+            <!--<optional>true</optional>-->
+        <!--</dependency>-->
 
         <!-- 安全控制 -->
         <!--<dependency>-->
@@ -244,14 +244,14 @@
                     <target>1.8</target>
                     <encoding>UTF-8</encoding>
                 </configuration>
-                <dependencies>
-                    <!-- spring loaded idea 配合 ctrl + f9使用 mvn spring-boot:run-->
-                    <dependency>
-                        <groupId>org.springframework</groupId>
-                        <artifactId>springloaded</artifactId>
-                        <version>1.2.6.RELEASE</version>
-                    </dependency>
-                </dependencies>
+                <!--<dependencies>-->
+                    <!--&lt;!&ndash; spring loaded idea 配合 ctrl + f9使用 mvn spring-boot:run&ndash;&gt;-->
+                    <!--<dependency>-->
+                        <!--<groupId>org.springframework</groupId>-->
+                        <!--<artifactId>springloaded</artifactId>-->
+                        <!--<version>1.2.6.RELEASE</version>-->
+                    <!--</dependency>-->
+                <!--</dependencies>-->
                 <executions>
                     <execution>
                         <goals>
