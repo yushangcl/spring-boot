@@ -19,6 +19,7 @@ public class CmUserServiceImplTest extends BaseTest{
     @Test
     public void setUserToRedis() throws Exception {
         cmUserService.setUserToRedis("张三");
+
     }
 
 }
