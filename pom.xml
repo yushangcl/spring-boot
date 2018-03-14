@@ -215,6 +215,7 @@
     </profiles>
 
     <build>
+        <finalName>spring-boot</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
