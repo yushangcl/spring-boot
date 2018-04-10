@@ -6,6 +6,8 @@ import com.whh.spring.boot.service.CmUserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.redis.core.HashOperations;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.serializer.JdkSerializationRedisSerializer;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,7 +28,10 @@ public class CmUserServiceImpl implements CmUserService {
     private CmUserMapper cmUserMapper;
 
     @Resource
-    private HashOperations<String, String, CmUser> hashOperations;
+    private HashOperations<String, Long, CmUser> hashOperations;
+
+    @Resource
+    private RedisTemplate redisTemplate;
 
     @Override
     public CmUser getUserByName(String name) {
@@ -36,7 +41,7 @@ public class CmUserServiceImpl implements CmUserService {
     @Override
     public void setUserToRedis(String name) {
         CmUser cmUser = this.getUserByName(name);
-        hashOperations.put(CM_USER_REDIS_KEY, cmUser.getId().toString(), cmUser);
+        hashOperations.put(CM_USER_REDIS_KEY, cmUser.getId(), cmUser);
         log.debug("存入redis" + cmUser);
         cmUser = hashOperations.get(CM_USER_REDIS_KEY, cmUser.getId().toString());
     }
