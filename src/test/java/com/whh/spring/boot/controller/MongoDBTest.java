@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
  * @author huahui.wu.
  * Created on 2018/4/10.
  */
-public class MongoDBTest extends BaseTest{
+public class MongoDBTest extends BaseTest {
 
     @Autowired
     private MongoTemplate mongoTemplate;
@@ -19,8 +19,11 @@ public class MongoDBTest extends BaseTest{
     @Test
     public void insert() {
         CmUser cmUser = new CmUser();
-        cmUser.setId(1L);
+        cmUser.setId(3L);
         cmUser.setName("李四");
         mongoTemplate.insert(cmUser);
+
+        cmUser = mongoTemplate.findById(1L, CmUser.class);
+        System.out.println(cmUser);
     }
 }
