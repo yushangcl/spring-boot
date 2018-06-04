@@ -28,7 +28,7 @@ public class CmUserServiceImpl implements CmUserService {
     private CmUserMapper cmUserMapper;
 
     @Resource
-    private HashOperations<String, Long, CmUser> hashOperations;
+    private HashOperations<String, String, CmUser> hashOperations;
 
     @Resource
     private RedisTemplate redisTemplate;
@@ -41,7 +41,7 @@ public class CmUserServiceImpl implements CmUserService {
     @Override
     public void setUserToRedis(String name) {
         CmUser cmUser = this.getUserByName(name);
-        hashOperations.put(CM_USER_REDIS_KEY, cmUser.getId(), cmUser);
+        hashOperations.put(CM_USER_REDIS_KEY, cmUser.getId().toString(), cmUser);
         log.debug("存入redis" + cmUser);
         cmUser = hashOperations.get(CM_USER_REDIS_KEY, cmUser.getId().toString());
     }
