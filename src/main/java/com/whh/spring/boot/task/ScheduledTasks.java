@@ -21,8 +21,8 @@ public class ScheduledTasks {
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 
     //@Scheduled(fixedRate = 5000) //可以通过cron表达式定义规则
-    @Scheduled(cron = "0/1 * * * * *")
-    @Async //将串行化定时任务并行化
+//    @Scheduled(cron = "0/1 * * * * *")
+//    @Async //将串行化定时任务并行化
     public void reportCurrentTime() throws InterruptedException {
         System.out.println("现在时间：" + dateFormat.format(new Date()));
         Thread.sleep(3000);
