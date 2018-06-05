@@ -65,9 +65,8 @@ public class DubboCallbackUtil {
 
     private static ReferenceConfig getReferenceConfig(String interfaceName, String address,
                                                       String group, String version) {
-        String referenceKey = interfaceName;
 
-        ReferenceConfig referenceConfig = referenceCache.get(referenceKey);
+        ReferenceConfig referenceConfig = referenceCache.get(interfaceName);
         if (null == referenceConfig) {
             try {
                 referenceConfig = new ReferenceConfig<>();
@@ -80,7 +79,7 @@ public class DubboCallbackUtil {
                 }
                 referenceConfig.setGeneric(true);
                 //referenceConfig.setUrl("dubbo://10.1.50.167:20880/com.test.service.HelloService");
-                referenceCache.put(referenceKey, referenceConfig);
+                referenceCache.put(interfaceName, referenceConfig);
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
@@ -106,14 +105,13 @@ public class DubboCallbackUtil {
             }
 
 
-            Object resultParam = genericService.$invoke(methodName, getMethodParamType(interfaceName, methodName), paramObject);
-            return resultParam;
+            return genericService.$invoke(methodName, getMethodParamType(interfaceName, methodName), paramObject);
         }
         return null;
     }
 
 
-    public static String[] getMethodParamType(String interfaceName, String methodName) {
+    private static String[] getMethodParamType(String interfaceName, String methodName) {
         try {
             //创建类
             Class<?> class1 = Class.forName(interfaceName);
