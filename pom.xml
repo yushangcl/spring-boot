@@ -139,14 +139,6 @@
                     <groupId>log4j</groupId>
                     <artifactId>log4j</artifactId>
                 </exclusion>
-                <exclusion>
-                    <groupId>org.apache.curator</groupId>
-                    <artifactId>curator-framework</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.apache.curator</groupId>
-                    <artifactId>curator-client</artifactId>
-                </exclusion>
             </exclusions>
         </dependency>
 
@@ -186,6 +178,14 @@
             <artifactId>zkclient</artifactId>
             <version>0.1</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.curator/curator-framework -->
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-framework</artifactId>
+            <version>4.0.1</version>
+        </dependency>
+
+
 
         <!-- spring devtools热部署 idea 配合 ctrl + f9使用-->
         <!--<dependency>-->
