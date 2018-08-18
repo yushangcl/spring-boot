@@ -228,6 +228,13 @@
     </profiles>
 
     <build>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ssh</artifactId>
+                <version>2.8</version>
+            </extension>
+        </extensions>
         <finalName>spring-boot</finalName>
         <resources>
             <resource>
@@ -254,6 +261,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <mainClass>com.whh.spring.boot.Application</mainClass>
+                    <jvmArguments>-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8777</jvmArguments>
                 </configuration>
                 <!--<dependencies>-->
                     <!--&lt;!&ndash; spring loaded idea 配合 ctrl + f9使用 mvn spring-boot:run&ndash;&gt;-->
@@ -270,6 +278,24 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>wagon-maven-plugin</artifactId>
+                <version>1.0</version>
+                <configuration>
+                    <fromFile>target/spring-boot.jar</fromFile>
+                    <url>scp://root:147258369..@192.168.50.6/home/spring-build/build/</url>
+                    <commands>
+                        <!-- 杀死原来的进程 -->
+                        <command>pkill -f spring-boot.jar</command>
+                        <!-- 重新启动test.jar，程序的输出结果写到nohup.out文件中 -->
+                        <command>/home/build/build.sh</command>
+                        <!--<command>java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=8777 -jar /home/spring-boot/build/spring-boot.jar</command>-->
+                    </commands>
+                    <!-- 显示运行命令的输出结果 -->
+                    <displayCommandOutputs>true</displayCommandOutputs>
+                </configuration>
             </plugin>
         </plugins>
     </build>
